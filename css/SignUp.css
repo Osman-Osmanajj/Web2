@@ -1,0 +1,136 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display:flex;
+    justify-content: center;
+    background: rgb(255,151,151);
+    background: linear-gradient(0deg, rgb(212, 212, 212) 0%, rgba(255,255,255,1) 100%);
+    height: 100vh;
+    margin: 0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    
+}
+.krejt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+}
+.container {
+    padding: 10%;
+    border:1px solid red;
+    border-radius:14px;
+    box-shadow: 0 22px 17px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1c1515;
+    margin-bottom: 15px;
+    margin-top: auto;
+    font-size: 24px;
+}
+
+.form-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+
+}
+
+label {
+    display: block;
+    color: black;
+    margin: 15px 0;
+}
+.form-field input{
+    border-radius: 15px;
+    padding: 9px;
+}
+
+input, select{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #333;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+.form-item{
+        font-size: 14px;
+        font-weight: normal;
+        font-style: italic;
+        font-variant: normal;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        padding-top: 1px;
+}
+.ditlindja input {
+    margin: 4px;
+
+}
+
+button:hover {
+    background-color: darkred;
+}
+.radio-group {
+    margin-bottom:15px ;
+    accent-color:red;
+    justify-content: space-between;
+    
+   }
+   .radio-group input[type="radio"] {
+    display: none;
+   }
+   
+   .radio-group label {
+    position: relative;
+    padding: 10px 25px;
+    cursor: pointer;
+    display: inline-block;
+   }
+   
+   .radio-group label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background: #ddd;
+    border: 1px solid #ccc;
+   }
+   
+   .radio-group input[type="radio"]:checked+label:before {
+    background: red;
+    border: 1px solid red;
+    box-shadow: 0px 0px 10px rgba(58, 121, 255, 0.25);
+   }
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10%;
+    }
+    .krejt{
+        width: 100%;
+    }
+}
