@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTACT</title>
-    <link rel="stylesheet" href="../css/Contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="../js/footer.js"></script>
+<?php 
+session_start();
 
-</head>
-<body>
-    <div id="headerContainer"></div>
-    <script src="../js/loadHeader.js"></script>
+    $_SESSION['title']= "Contact";
+    include "../components/header.php";
+    $ngjyra = " e zeze";
+    //funksioni i cili e krijon nje cookie eshte:
+        // setcookie("Color",$ngjyra);
+        setcookie("Color",$ngjyra,time() + 3600);
+    //parametri i tret eshte per te percaktuar kohen se sa do te ruhet 
+    //Printimi i cookies
+        echo $_COOKIE["Color"];
+        echo "<br>";
+        // print_r($_COOKIE);
+        echo "<br>";
+?>
+
+    <link rel="stylesheet" href="../css/Contact.css">
+
         <div class="all">
         <div class="form-field">
             <div class="kontinier">
@@ -114,7 +119,6 @@
             </div>
         </div>
     </div>
-        <div id="footerContainer"></div>
         <script>
             document.addEventListener('click', function(event) {
               if (event.target.closest('.menu-toggle')) {
@@ -123,6 +127,7 @@
               }
           });
           </script>
-</body>
-</html>
 
+<?php
+include "../components/footer.php";
+?>

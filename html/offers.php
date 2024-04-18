@@ -1,8 +1,9 @@
+<?php 
+session_start();
 
-<?php
-include "../components/header.php"
+    $_SESSION['title']= "Offers";
+    include "../components/header.php";
 ?>
-
     <section class="section2">
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">

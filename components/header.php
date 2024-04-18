@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
+    <title><?php echo $_SESSION['title']?></title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,12 +22,12 @@
                 <div class="hamburger"></div>
             </div>
         <ul class="navElements">
-            <li class="a1"><a href="../html/home.php">Home</a></li>
+            <li class="a1"><a href="../index.php">Home</a></li>
             <li class="a1"><a href="../html/books.php">Books</a></li>
             <li class="a1"><a href="../html/offers.php">Offers</a></li>
             <li class="a1"><a href="../html/Contact.php">Contact Us</a></li>
             <li class="a1"><a href="../html/About.php">About</a></li>
-            <li class="a1"><a href="../html/SignIn.php">Log Out</a></li>
+            <li class="a1"><a href="../html/SignIn.php">Sign In</a></li>
             <li class="a2"><label class="switch">
                 <input type="checkbox" onclick="myfunction()">
                 <span class="slider round"></span>

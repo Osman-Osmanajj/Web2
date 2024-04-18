@@ -1,15 +1,25 @@
+<?php 
+session_start();
 
-  <?php
-  include "../components/header.php"
-  ?>
+    $_SESSION['title']= "Books";
+    include "../components/header.php";
+?>
 
   <div id="large-th">
     <div class="kontinier">
-      <h1 style="color: black;font-size: 40px; margin-top: 100px;">January Books</h1>
+      <h1 style="color: black;font-size: 40px; margin-top: 100px;">Books In Stock</h1>
       <br>
-      <div class="searchbar">
+    <form method="POST">
+        <label for="sort">Sort by:</label>
+        <select name="sort" id="sort">
+            <option value="title">Name</option>
+            <option value="price">Price</option>
+        </select>
+        <input type="submit" value="Sort">
+    </form>
+      <!-- <div class="searchbar">
         <input type="text" id="textInput" placeholder="Type something..." oninput="filterBooks()">
-        </div>
+        </div> -->
       <div class="choose">
         <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
         <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>
@@ -18,7 +28,9 @@
       </div>
     </div>
   </div>
-  <script src="../js/books.js"></script>
+  <?php
+  include "../js/bookss.php"
+  ?>
   <div id="shigjeta"></div>
   
   <script>

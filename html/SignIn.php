@@ -17,8 +17,8 @@
             </p>
         </div>
     
-    <form action="home.php">
     <body>
+    <form action="/Web2">
         <div class="content">
             <h2>Sign In</h2>
                 <div class="inputBox">
