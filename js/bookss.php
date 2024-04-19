@@ -6,56 +6,37 @@ class Book
     private $title;
     private $price;
 
-    public function __construct($image, $author, $title, $price)
-    {
+    public function __construct($image, $author, $title, $price){
         $this->image = $image;
         $this->author = $author;
         $this->title = $title;
         $this->price = $price;
     }
-
-    public function getImage()
-    {
+    public function getImage(){
         return $this->image;
     }
-
-    public function getAuthor()
-    {
+    public function getAuthor(){
         return $this->author;
     }
-
-    public function getTitle()
-    {
+    public function getTitle(){
         return $this->title;
     }
-
-    public function getPrice()
-    {
+    public function getPrice(){
         return $this->price;
     }
-
-    public function setImage($image)
-    {
+    public function setImage($image){
         $this->image = $image;
     }
-
-    public function setAuthor($author)
-    {
+    public function setAuthor($author){
         $this->author = $author;
     }
-
-    public function setTitle($title)
-    {
+    public function setTitle($title){
         $this->title = $title;
     }
-
-    public function setPrice($price)
-    {
+    public function setPrice($price){
         $this->price = $price;
     }
-
-    public function displayInfo()
-    {
+    public function displayInfo(){
         return "Title: {$this->title}, Author: {$this->author}, Price: {$this->price}";
     }
 }
