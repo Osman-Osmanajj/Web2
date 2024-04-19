@@ -17,20 +17,18 @@ session_start();
         </select>
         <input type="submit" value="Sort">
     </form>
-      <!-- <div class="searchbar">
-        <input type="text" id="textInput" placeholder="Type something..." oninput="filterBooks()">
-        </div> -->
       <div class="choose">
         <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
         <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>
       </div>
       <div id="list-th">
+      <?php
+      include "../js/bookss.php"
+      ?>
       </div>
     </div>
   </div>
-  <?php
-  include "../js/bookss.php"
-  ?>
+
   <div id="shigjeta"></div>
   
   <script>

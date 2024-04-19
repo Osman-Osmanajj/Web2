@@ -2,8 +2,6 @@
 session_start();
     $_SESSION['title']= "Contact";
     include "../components/header.php";
-    
-    include "color.php"
 ?>
 
     <link rel="stylesheet" href="../css/Contact.css">
