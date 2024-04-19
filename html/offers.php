@@ -1,16 +1,15 @@
 <?php 
 session_start();
-// Check if a background color cookie is set
+
 if(isset($_COOKIE['bg_color'])) {
     $bg_color = $_COOKIE['bg_color'];
 } else {
-    $bg_color = '#ffffff'; // Default background color
+    $bg_color = '#ffffff'; 
 }
 
-// If the form is submitted, set the background color cookie
 if(isset($_POST['submit'])) {
     $bg_color = $_POST['bg_color'];
-    setcookie('bg_color', $bg_color, time() + (86400 * 30), "/"); // Set the cookie for 30 days
+    setcookie('bg_color', $bg_color, time() + (86400 * 30), "/"); 
 }
 
 
@@ -60,11 +59,13 @@ if(isset($_POST['submit'])) {
             background-color: <?php echo $bg_color; ?>;
         }
     </style>
+<div class="forma">
 <form method="post">
         <label for="bg_color">Choose Background Color:</label><br>
         <input type="color" id="bg_color" name="bg_color" value="<?php echo $bg_color; ?>"><br><br>
-        <input type="submit" name="submit" value="Change Color">
+        <input type="submit" name="submit" value="Change Color" id="submit">
     </form>
+    </div>
  
   <script src="../js/offers.js"></script>
     <script>

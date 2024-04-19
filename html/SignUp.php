@@ -65,12 +65,12 @@
     let confirmPassword = document.getElementById('confirmPassword').value;
     let inputYear = document.getElementById('birthday_year').value;
 
-    // Regular expression patterns
+   
     let usernamePattern = /^[a-zA-Z0-9_]{5,}$/; // Username must be alphanumeric and at least 5 characters long
     let passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/; // Password must contain at least one digit, one lowercase, one uppercase, one special character, and be at least 8 characters long
     let yearPattern = /^(19\d{2}|20(?:[0-1]\d|20))$/; // Year must be between 1900 and 2099
 
-    // Validation
+   
     if (!usernamePattern.test(inputUsername)) {
         alert('Username must be alphanumeric and at least 5 characters long.');
         return false; 

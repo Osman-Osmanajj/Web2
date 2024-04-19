@@ -9,14 +9,16 @@ session_start();
     <div class="kontinier">
       <h1 style="color: black;font-size: 40px; margin-top: 100px;">Books In Stock</h1>
       <br>
+      <div class="dropdown">
     <form method="POST">
         <label for="sort">Sort by:</label>
         <select name="sort" id="sort">
-            <option value="title">Name</option>
+            <option value="title" id="titulli">Name</option>
             <option value="price">Price</option>
         </select>
-        <input type="submit" value="Sort">
+        <input type="submit" value="Sort" id="submiti">
     </form>
+    </div>
       <div class="choose">
         <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
         <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>

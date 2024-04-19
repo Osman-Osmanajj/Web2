@@ -6,6 +6,9 @@ nav{
   margin: 0 auto;
 
 }
+.description{
+  justify-content: space-between;
+}
 #large-th{
   display: flex;
 }
@@ -25,12 +28,37 @@ nav{
   border-radius: 15px;
   border: 1px solid red;
 }
-
+.price{
+  position: relativec;
+  bottom: 0;
+  right: 0;
+}
 .choose {
   width: 100%;
   height: 40px;
 }
+.dropdown{
+  display: flex;
+  justify-content: center;
+}
+.dropdown #submiti{
+  margin: 5px;
 
+}
+.dropdown #sort{
+  padding: 4px;
+  margin: 5px;
+}
+#submiti{
+  margin: 5px;
+  padding: 4px;
+}
+#titulli{
+  margin: 5px;
+}
+.dropdown label{
+  margin: 5px;
+}
 .fa {
   margin-right: 20px;
   font-size: 30px;

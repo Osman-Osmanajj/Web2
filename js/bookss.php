@@ -84,7 +84,6 @@ $books = [
 ];
 
 
-// Rest of your code remains the same
 function populateDom($books) {
     $output = '';
     foreach ($books as $book) {
@@ -95,7 +94,7 @@ function populateDom($books) {
             "<div class='description'>" .
             "<p class='title'>" . $book->getTitle() . "<br>" .
             "<span class='author'>" . $book->getAuthor() . "</span></p>" .
-            "<div>" . $book->getPrice() . "</div>" .
+            "<div>" . $book->getPrice() . "€</div>" .
             "</div>" .
             "</div>";
     }
