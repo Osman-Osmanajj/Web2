@@ -1,5 +1,18 @@
 <?php 
 session_start();
+// Check if a background color cookie is set
+if(isset($_COOKIE['bg_color'])) {
+    $bg_color = $_COOKIE['bg_color'];
+} else {
+    $bg_color = '#ffffff'; // Default background color
+}
+
+// If the form is submitted, set the background color cookie
+if(isset($_POST['submit'])) {
+    $bg_color = $_POST['bg_color'];
+    setcookie('bg_color', $bg_color, time() + (86400 * 30), "/"); // Set the cookie for 30 days
+}
+
 
     $_SESSION['title']= "Offers";
     include "../components/header.php";
@@ -23,7 +36,7 @@ session_start();
             
           </div>
           <div class="carousel-item">
-            <h5>Most selled</h5>
+            <h5>Most sold</h5>
             <img src="../fotot/S3.png" alt="oferta 1" width="100%" height="30%">
             
           </div>
@@ -41,6 +54,17 @@ session_start();
     <div id="discount-content"></div>
   </section>
 
+  
+<style>
+        body {
+            background-color: <?php echo $bg_color; ?>;
+        }
+    </style>
+<form method="post">
+        <label for="bg_color">Choose Background Color:</label><br>
+        <input type="color" id="bg_color" name="bg_color" value="<?php echo $bg_color; ?>"><br><br>
+        <input type="submit" name="submit" value="Change Color">
+    </form>
  
   <script src="../js/offers.js"></script>
     <script>
@@ -60,6 +84,8 @@ session_start();
       }
     </script>
 
+
     <?php
     include "../components/footer.php"
     ?>
+

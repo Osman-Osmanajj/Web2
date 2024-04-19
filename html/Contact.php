@@ -1,18 +1,9 @@
 <?php 
 session_start();
-
     $_SESSION['title']= "Contact";
     include "../components/header.php";
-    $ngjyra = " e zeze";
-    //funksioni i cili e krijon nje cookie eshte:
-        // setcookie("Color",$ngjyra);
-        setcookie("Color",$ngjyra,time() + 3600);
-    //parametri i tret eshte per te percaktuar kohen se sa do te ruhet 
-    //Printimi i cookies
-        echo $_COOKIE["Color"];
-        echo "<br>";
-        // print_r($_COOKIE);
-        echo "<br>";
+    
+    include "color.php"
 ?>
 
     <link rel="stylesheet" href="../css/Contact.css">
