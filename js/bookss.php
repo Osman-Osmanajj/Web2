@@ -75,7 +75,12 @@ function populateDom($books) {
             "<div class='description'>" .
             "<p class='title'>" . $book->getTitle() . "<br>" .
             "<span class='author'>" . $book->getAuthor() . "</span></p>" .
-            "<div>" . $book->getPrice() . "€</div>" .
+            "<div>" . $book->getPrice() ."<div class='button'>" .
+            "<button onclick='buyNow()'>+</button>" .
+            
+      " </div>" .
+            "</div>" .
+            
             "</div>" .
             "</div>";
     }
