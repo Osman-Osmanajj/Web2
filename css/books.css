@@ -36,7 +36,7 @@ nav{
   justify-items: end;
   align-items: end;
 }
-.description .button button{
+ .button input{
   width: 30px;
   height: 80%;
   /* margin-top: 80%; */

@@ -10,14 +10,7 @@ session_start();
       <h1 style="color: black;font-size: 40px; margin-top: 100px;">Books In Stock</h1>
       <br>
       <div class="dropdown">
-    <form method="POST">
-        <label for="sort">Sort by:</label>
-        <select name="sort" id="sort">
-            <option value="title" id="titulli">Name</option>
-            <option value="price">Price</option>
-        </select>
-        <input type="submit" value="Sort" id="submiti">
-    </form>
+   
     </div>
       <div class="choose">
         <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
@@ -27,6 +20,30 @@ session_start();
       <?php
       include "../js/bookss.php"
       ?>
+     <script>
+function addToCart(bookTitleId) {
+    var formData = new FormData(document.getElementById('add-to-cart-form-' + bookTitleId)); // Get the form data
+
+    // Send the form data using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'add_to_cart.php', true);
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // Request was successful, handle the response here if needed
+            console.log(xhr.responseText);
+        } else {
+            // Request failed, handle errors here
+            console.error(xhr.statusText);
+        }
+    };
+    xhr.onerror = function() {
+        // Request failed, handle errors here
+        console.error('Request failed');
+    };
+    xhr.send(formData);
+}
+</script>
+
       </div>
     </div>
   </div>
