@@ -83,5 +83,5 @@ function populateDom($booksonsale)
 
     echo $output;
 }
-populateDom($booksonsale);
+return populateDom($booksonsale);
 ?>

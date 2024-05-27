@@ -53,7 +53,9 @@ if(isset($_POST['submit'])) {
     <div id="discount-content"></div>
   </section>
 
-  
+  <?php
+include "../js/Offers.php";
+ ?>
 <style>
         body {
             background-color: <?php echo $bg_color; ?>;
@@ -67,7 +69,8 @@ if(isset($_POST['submit'])) {
     </form>
     </div>
  
-  <script src="../js/offers.js"></script>
+  <!-- <script src="../js/Offers.php"></script> -->
+  <!-- <script src="../js/Offers.php"></script> -->
     <script>
     document.addEventListener('click', function(event) {
       if (event.target.closest('.menu-toggle')) {
