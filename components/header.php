@@ -29,6 +29,7 @@
             <li class="a1"><a href="../html/About.php">About</a></li>
             <li class="a1"><a href="../html/SignIn.php">Sign In</a></li>
             <li class="a1"> <a href="cart.php">View Cart</a></li>
+            <li class="a1"><a href="../html/BooksApi.php">Books Api</a></li>
             <li class="a2"><label class="switch">
                 <input type="checkbox" onclick="myfunction()">
                 <span class="slider round"></span>
@@ -41,5 +42,3 @@
             document.querySelector('.menu-toggle').classList.toggle('active');
         });
     </script>
-<!-- </body>
-</html> -->
