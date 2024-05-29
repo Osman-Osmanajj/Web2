@@ -1,3 +1,40 @@
+<?php
+session_start();
+include '../database/dbconnection.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    try {
+        $stmt = $pdo->prepare("SELECT id, password FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $hashed_password = $row['password'];
+
+            if (password_verify($password, $hashed_password)) {
+                $_SESSION['user_id'] = $row['id'];
+                
+                if (isset($_POST['remember'])) {
+                    setcookie("user_id", $row['id'], time() + (86400 * 30), "/");
+                }
+                header("Location: ../index.php");
+                exit();
+            } else {
+                echo "Invalid password.";
+            }
+        } else {
+            echo "No user found with that email.";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,30 +54,25 @@
             </p>
         </div>
     
-    <body>
-    <form action="/Web2">
-        <div class="content">
-            <h2>Sign In</h2>
+        <form action="signin.php" method="post">
+            <div class="content">
+                <h2>Sign In</h2>
                 <div class="inputBox">
-                    <input type="email" placeholder="Email" id="emailpassword" autocomplete="on" required>
+                    <input type="email" name="email" placeholder="Email" id="emailpassword" autocomplete="on" required>
                 </div>
                 <div class="inputBox">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="inputBox1">
-                    <input type="checkbox" name="check" id="inputBox" >
+                    <input type="checkbox" name="remember" id="inputBox">
                     <label for="inputBox">Remember me</label>
-                    
                 </div>
                 <div class="inputBox">
                     <input type="submit" value="Login" id="submit">
                 </div>
                 <h5>Don't have an account? &nbsp;<a href="SignUp.php">Sign Up here</a></h5>
-              </div>  
-
-        </div>
-    </form>
-    
-</div>
-    </body>
+            </div>  
+        </form>
+    </div>
+</body>
 </html>
