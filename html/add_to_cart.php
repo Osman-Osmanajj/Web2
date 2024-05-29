@@ -5,25 +5,36 @@ session_start();
 require_once '../database/dbconnection.php'; // Përfshini lidhjen tuaj me bazën e të dhënave
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['book_title'])) {
-    $book_title = $_POST['book_title'];
-    $book_author = $_POST['book_author'];
-    $book_price = $_POST['book_price'];
+    $book_title = filter_input(INPUT_POST, 'book_title', FILTER_SANITIZE_STRING);
+    $book_author = filter_input(INPUT_POST, 'book_author', FILTER_SANITIZE_STRING);
+    $book_price = filter_input(INPUT_POST, 'book_price', FILTER_VALIDATE_FLOAT);
 
-    // Shto librin në tabelën e shportës së blerjeve në databazë
-    $stmt = $pdo->prepare('INSERT INTO shopping_cart (book_title, book_author, book_price) VALUES (?, ?, ?)');
-    $stmt->execute([$book_title, $book_author, $book_price]);
+    if ($book_title && $book_author && $book_price !== false) {
+        try {
+        
+            $stmt = $pdo->prepare('INSERT INTO shopping_cart (book_title, book_author, book_price) VALUES (:book_title, :book_author, :book_price)');
+            $stmt->bindParam(':book_title', $book_title, PDO::PARAM_STR);
+            $stmt->bindParam(':book_author', $book_author, PDO::PARAM_STR);
+            $stmt->bindParam(':book_price', $book_price, PDO::PARAM_STR);
+            $stmt->execute();
 
-    // Përditëso shportën e blerjeve në sesion (ose mund të qëndrojë vetëm në databazë nëse doni)
-    if (isset($_SESSION['cart'][$book_title])) {
-        $_SESSION['cart'][$book_title]['sasi']++;
+            if (isset($_SESSION['cart'][$book_title])) {
+                $_SESSION['cart'][$book_title]['sasi']++;
+            } else {
+                $_SESSION['cart'][$book_title] = [
+                    'autor' => $book_author,
+                    'çmim' => $book_price,
+                    'sasi' => 1
+                ];
+            }
+        } catch (PDOException $e) {
+            echo 'Gabim: ' . $e->getMessage();
+        }
     } else {
-        $_SESSION['cart'][$book_title] = [
-            'autor' => $book_author,
-            'çmim' => $book_price,
-            'sasi' => 1
-        ];
+        echo 'Të dhëna të pavlefshme.';
     }
 }
+
 
 header('Location: cart.php');
 exit();
