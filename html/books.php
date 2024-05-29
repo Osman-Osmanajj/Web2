@@ -68,6 +68,19 @@ function addToCart(bookTitleId) {
        
     }
   </script>
+  <head>
+    <title>Shto një libër</title>
+</head>
+<body>
+    <h1>Shto një libër</h1>
+    <form action="books.php" method="POST">
+        Titulli: <input type="text" name="title"><br>
+        Autori: <input type="text" name="author"><br>
+        Çmimi: <input type="text" name="price"><br>
+        <input type="submit" value="Shto librin">
+    </form>
+</body>
+</html>
 
 <?php
 include "../components/footer.php"
