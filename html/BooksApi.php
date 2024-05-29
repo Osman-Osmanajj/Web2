@@ -76,6 +76,12 @@ include "../components/header.php";
         }
     }
 </script>
+<script>
+    function myfunction() {
+        var x = document.body;
+        x.classList.toggle("darkMode");
+    }
+</script>
 <?php
 include "../components/footer.php";
 ?>

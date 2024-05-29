@@ -8,7 +8,7 @@ session_start();
 
   <div id="large-th">
     <div class="kontinier">
-      <h1 style="color: black;font-size: 40px; margin-top: 100px;">Books In Stock</h1>
+      <h1 style="font-size: 40px; margin-top: 100px;">Books In Stock</h1>
       <br>
       <div class="dropdown">
    
@@ -68,7 +68,9 @@ function addToCart(bookTitleId) {
        
     }
   </script>
-
-<?php
+<div style="display: flex; justify-content: center;">
+  <a href="BooksApi.php">The Book you were looking for isn't here</a>
+</div>
+    <?php
 include "../components/footer.php"
 ?>

@@ -22,14 +22,13 @@
                 <div class="hamburger"></div>
             </div>
         <ul class="navElements">
-            <li class="a1"><a href="../index.php">Home</a></li>
+            <li class="a1"><a href="../html/home.php">Home</a></li>
             <li class="a1"><a href="../html/books.php">Books</a></li>
             <li class="a1"><a href="../html/offers.php">Offers</a></li>
             <li class="a1"><a href="../html/Contact.php">Contact Us</a></li>
             <li class="a1"><a href="../html/About.php">About</a></li>
-            <li class="a1"><a href="../html/SignIn.php">Sign In</a></li>
-            <li class="a1"> <a href="cart.php">View Cart</a></li>
-            <li class="a1"><a href="../html/BooksApi.php">Books Api</a></li>
+            <li class="a1"> <a href="../html/cart.php">View Cart</a></li>
+            <li class="a1"><a href="../index.php">Sign In</a></li>
             <li class="a2"><label class="switch">
                 <input type="checkbox" onclick="myfunction()">
                 <span class="slider round"></span>

@@ -89,5 +89,11 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
     </div>
     </div>
+<script>
+    function myfunction() {
+        var x = document.body;
+        x.classList.toggle("darkMode");
+    }
+</script>
 </body>
 </html>

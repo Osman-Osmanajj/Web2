@@ -13,7 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $birthday_year = $_POST['birthday_year'];
 
     if ($password !== $confirmPassword) {
-        echo "Passwords do not match.";
+        echo "<script>
+                alert('Passwords do not match');
+                document.location.href = '../html/SignUp.php'
+                </script>";
         exit();
     }
 
@@ -42,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt->execute();
         echo "User registered successfully!";
-        header("Location: ../index.php");
+        header("Location: ../html/home.php");
         exit();
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
