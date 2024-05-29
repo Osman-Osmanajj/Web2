@@ -3,6 +3,7 @@ session_start();
 
     $_SESSION['title']= "Books";
     include "../components/header.php";
+    require "../ErrorHandle/errorHandler.php";
 ?>
 
   <div id="large-th">
@@ -18,7 +19,8 @@ session_start();
       </div>
       <div id="list-th">
       <?php
-      include "../js/bookss.php"
+      include "../js/bookss.php";
+      trigger_error("Ky është një gabim testues!!", E_USER_WARNING);
       ?>
      <script>
 function addToCart(bookTitleId) {
@@ -63,7 +65,7 @@ function addToCart(bookTitleId) {
     function myfunction(){
         var x = document.body;
         x.classList.toggle("darkMode");
-
+       
     }
   </script>
 
